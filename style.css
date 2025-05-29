@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+    background-image: linear-gradient(rgb(2, 2, 36),rgb(8, 8, 95));
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  h1 {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.829);
+  }
+  #resultado {
+    font-size: 27px;
+    color: #910000;
+    margin-top: 20px;
+    ;
+  }

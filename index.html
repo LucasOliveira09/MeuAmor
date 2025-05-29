@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu amor infinito!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tempo decorrido desde: 15º de julho de 2022 às 21:07</h1>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularTempoDesdeDataFixa() {
+      const dataInicial = new Date("2022-07-15T21:07:00");
+      const agora = new Date();
+
+      let diffMs = agora - dataInicial;
+
+      const msPorSegundo = 1000;
+      const msPorMinuto = msPorSegundo * 60;
+      const msPorHora = msPorMinuto * 60;
+      const msPorDia = msPorHora * 24;
+      const msPorAno = msPorDia * 365.25;
+
+      const anos = Math.floor(diffMs / msPorAno);
+      diffMs -= anos * msPorAno;
+
+      const dias = Math.floor(diffMs / msPorDia);
+      diffMs -= dias * msPorDia;
+
+      const horas = Math.floor(diffMs / msPorHora);
+      diffMs -= horas * msPorHora;
+
+      const minutos = Math.floor(diffMs / msPorMinuto);
+      diffMs -= minutos * msPorMinuto;
+
+      const segundos = Math.floor(diffMs / msPorSegundo);
+
+      return `${anos} anos, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    }
+
+    function atualizarTempo() {
+      document.getElementById("resultado").innerText = calcularTempoDesdeDataFixa();
+    }
+
+    setInterval(atualizarTempo, 1000); // atualiza a cada 1 segundo
+    atualizarTempo(); // chamada inicial
+  </script>
+</body>
+</html>
